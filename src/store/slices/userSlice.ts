@@ -10,11 +10,11 @@ const initialState: UserState = {
 };
 
 export const userSlice = createSlice({
-    name: "counter",
+    name: "user",
     initialState,
     reducers: {
-        setName: (state: UserState, action: PayloadAction<number>) => {
-            state.name += action.payload;
+        setName: (state: UserState, action: PayloadAction<string>) => {
+            state.name = action.payload;
         },
     },
 });
