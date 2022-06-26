@@ -1,0 +1,11 @@
+{
+  "typescript.preferences.importModuleSpecifier": "auto",
+  "eslint.workingDirectories": [
+    {
+      "pattern": "./libs/*/"
+    }
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange"
+}
