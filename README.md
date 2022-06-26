@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# Project Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Online Cinema
 
-## Available Scripts
+## Demo link:
 
-In the project directory, you can run:
+Access my site at (_coming soon_)
 
-### `npm start`
+## Table of Content:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [About The App](#about-the-app)
+- [Screenshots](#screenshots)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Approach](#approach)
+- [Status](#status)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About The App
 
-### `npm test`
+[OnlineCinema] is an app that ...
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+## Technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+We used `React`, `TypeScript` in our project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- download or clone the repository
+- run `npm install`
 
-### `npm run eject`
+## Approach
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+We followed atomic design pattern in order to develop application, used TypeScript in order to make it maintainable and improve the codebase...
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Status
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[OnlineCinema] is still in progress.
