@@ -23,7 +23,7 @@ Access my site at (_coming soon_)
 
 ## Technologies
 
-We used `React`, `TypeScript` in our project
+We used `React`, `TypeScript`, `Redux Toolkit`, `Sass` in our project.
 
 ## Setup
 
