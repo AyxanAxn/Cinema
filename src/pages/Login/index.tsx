@@ -14,7 +14,6 @@ const adminUser = {
 export const Login = () => {
     
     const [user, setUser] = useState<IDetails>({name: "", email: "", password: ""});
-    // const [user, setUser] = useState({name: "", email: ""});
     const [error, setError] = useState<string>("");
     
     const login = (details: IDetails) => {
@@ -29,10 +28,6 @@ export const Login = () => {
         else{
             setError("Details do not match");
         }
-    };
-    
-    const LogOut = () => {
-        setUser({name: "", email: "", password: ""});
     };
 
     const [details, setDetails] = useState<IDetails>({name: "", email: "", password: ""});
