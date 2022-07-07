@@ -6,42 +6,40 @@ export interface IDetails {
     password: string;
 }
 
+const adminUser = {
+    email: "a@a.com",
+    password: "admin123"
+};
+
 export const Login = () => {
-    const adminUser = {
-        email: "adminadmin@com",
-        password: "admin123"
-    };
     
-    const [user, setUser] = useState({name: "", email: ""});
-    const [error, setError] = useState("");
+    const [user, setUser] = useState<IDetails>({name: "", email: "", password: ""});
+    // const [user, setUser] = useState({name: "", email: ""});
+    const [error, setError] = useState<string>("");
     
-    const Login = (details: IDetails) => {
-        console.log(details);
-    
+    const login = (details: IDetails) => {
         if(details.email == adminUser.email  && details.password == adminUser.password)
         {
-            console.log("Logged in");
             setUser({
                 name: details.name,
-                email: details.email
+                email: details.email,
+                password: details.password
             });
         }
         else{
-            console.log("Details do not match");
             setError("Details do not match");
         }
     };
     
     const LogOut = () => {
-        console.log("Logout");
-        setUser({name: "", email: ""});
+        setUser({name: "", email: "", password: ""});
     };
 
     const [details, setDetails] = useState<IDetails>({name: "", email: "", password: ""});
     
     const submitHandler = (e: React.SyntheticEvent) => {
         e.preventDefault();
-        Login(details);
+        login(details);
     };
 
     return (
