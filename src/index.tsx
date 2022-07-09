@@ -7,6 +7,8 @@ import {
     BrowserRouter,
 } from "react-router-dom";
 
+import "./mock";
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
