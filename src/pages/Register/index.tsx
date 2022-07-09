@@ -1,6 +1,7 @@
 import { createAction } from "@reduxjs/toolkit";
 import React, { useState } from "react";
 import "./style.css";
+
 export interface IUserDetails {
     username: string,
     email: string,
@@ -8,9 +9,7 @@ export interface IUserDetails {
     phoneNumber: string
 }
 
-
 export const Register = () => {
-
 
     const [userRegister, setUserRegister] = React.useState<IUserDetails>({ email: "", password: "", username: "", phoneNumber: "" });
     const [error, setError] = useState<string>("");
