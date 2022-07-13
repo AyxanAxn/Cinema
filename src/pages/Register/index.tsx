@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { HTTP } from "../../core/services/http";
 import "./style.css";
 
 export interface IUserDetails {
@@ -11,14 +12,20 @@ export interface IUserDetails {
 export const Register = () => {
 
     const [userRegister, setUserRegister] = React.useState<IUserDetails>(
-        { 
-            email: "", 
+        {
+            email: "",
             password: "",
-            username: "", 
-            phoneNumber: "" 
+            username: "",
+            phoneNumber: ""
         });
 
     const [error, setError] = useState<string>("");
+
+    const register = async () => {
+        const res = await HTTP.client().post("/register", userRegister);
+
+        console.log(res);
+    };
 
     return (
 
@@ -45,7 +52,7 @@ export const Register = () => {
                     <input type="password" name="password" id="password" onChange={u => setUserRegister({ ...userRegister, password: u.target.value })} value={(userRegister.password)}></input>
                 </div>
                 {(error != "") ? (<div className='error'>{error}</div>) : ""}
-                <input type="submit" className="button" value="REGISTER" />
+                <input type="submit" className="button" value="REGISTER" onClick={register} />
             </div>
         </form >
 
