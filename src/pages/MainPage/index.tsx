@@ -7,6 +7,7 @@ export const MainPage = () => {
 
     const navigate = useNavigate();
     const [users, setUsers] = useState<IUser[]>([]);
+   
     const refetch = async () => {
         setUsers((await HTTP.client().get("/users")).data.users);
     };
@@ -21,7 +22,10 @@ export const MainPage = () => {
         asyncFetch();
     }, []);
 
-    const goToRegister = () => { navigate("/register"); };
+    const goToRegister = () => { 
+        navigate("/register"); 
+    };
+
     return (
 
         <div style={{ padding: 50 }}>

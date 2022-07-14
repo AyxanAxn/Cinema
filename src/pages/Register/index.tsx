@@ -23,7 +23,11 @@ export const Register = () => {
     const [error, setError] = useState<string>("");
 
     const register = async () => {
-        const res = await HTTP.client().post("/register", userRegister);
+        try {
+            const res = await HTTP.client().post("/register", userRegister);
+        } catch(err) {
+            console.log("Error: ", err);
+        }
     };
 
     const goToMain = () => { navigate("/"); };
