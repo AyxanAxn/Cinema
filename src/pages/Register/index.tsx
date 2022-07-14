@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { HTTP } from "../../core/services/http";
 import "./style.css";
 
@@ -11,6 +12,7 @@ export interface IUserDetails {
 
 export const Register = () => {
 
+    const navigate = useNavigate();
     const [userRegister, setUserRegister] = React.useState<IUserDetails>(
         {
             email: "",
@@ -18,16 +20,17 @@ export const Register = () => {
             displayname: "",
             phoneNumber: ""
         });
-
     const [error, setError] = useState<string>("");
-
     const register = async () => {
         const res = await HTTP.client().post("/register", userRegister);
     };
+    const goToMain = () => { navigate("/"); };
 
     return (
 
         <form>
+            <input type="submit" className="button" value="BACK" onClick={goToMain} />
+
             <div className="container">
                 <h4 className="register-h4">REGISTER</h4>
                 <div className="form-group">
@@ -53,7 +56,6 @@ export const Register = () => {
                 <input type="submit" className="button" value="REGISTER" onClick={register} />
             </div>
         </form >
-
 
     );
 };
