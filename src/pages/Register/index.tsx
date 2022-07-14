@@ -3,7 +3,7 @@ import { HTTP } from "../../core/services/http";
 import "./style.css";
 
 export interface IUserDetails {
-    username: string,
+    displayname: string,
     email: string,
     password: string,
     phoneNumber: string
@@ -15,7 +15,7 @@ export const Register = () => {
         {
             email: "",
             password: "",
-            username: "",
+            displayname: "",
             phoneNumber: ""
         });
 
@@ -23,8 +23,6 @@ export const Register = () => {
 
     const register = async () => {
         const res = await HTTP.client().post("/register", userRegister);
-
-        console.log(res);
     };
 
     return (
@@ -34,7 +32,7 @@ export const Register = () => {
                 <h4 className="register-h4">REGISTER</h4>
                 <div className="form-group">
                     <label>Username</label>
-                    <input type="text" name="username" id="name" onChange={u => setUserRegister({ ...userRegister, username: u.target.value })} value={(userRegister.username)}></input>
+                    <input type="text" name="username" id="name" onChange={u => setUserRegister({ ...userRegister, displayname: u.target.value })} value={(userRegister.displayname)}></input>
                 </div>
 
                 <div className="form-group">

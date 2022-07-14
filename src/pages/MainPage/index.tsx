@@ -6,16 +6,6 @@ export const MainPage = () => {
 
     const [users, setUsers] = useState<IUser[]>([]);
 
-    // const register = async () => {
-    //     const res = await HTTP.client().post("/register", {
-    //         displayName: "testUser",
-    //         email: "testUser@gmail.com",
-    //         password: "asyncFunc",
-    //     });
-
-    //     console.log(res);
-    // };
-
     const refetch = async () => {
         setUsers((await HTTP.client().get("/users")).data.users);
     };

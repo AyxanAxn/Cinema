@@ -20,7 +20,6 @@ createServer({
             const attrs = JSON.parse(request.requestBody);
 
             schema.create("user", attrs);
-            console.log("Regiser", attrs);
 
             return new Response(201);
         });
