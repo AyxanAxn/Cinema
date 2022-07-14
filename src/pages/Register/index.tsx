@@ -4,7 +4,7 @@ import { HTTP } from "../../core/services/http";
 import "./style.css";
 
 export interface IUserDetails {
-    displayname: string,
+    displayName: string,
     email: string,
     password: string,
     phoneNumber: string
@@ -17,7 +17,7 @@ export const Register = () => {
         {
             email: "",
             password: "",
-            displayname: "",
+            displayName: "",
             phoneNumber: ""
         });
     const [error, setError] = useState<string>("");
@@ -26,16 +26,23 @@ export const Register = () => {
     };
     const goToMain = () => { navigate("/"); };
 
+
+
+    const submitHandler = (e: React.SyntheticEvent) => {
+        e.preventDefault();
+
+    };
+
     return (
 
-        <form>
+        <form onSubmit={submitHandler}>
             <input type="submit" className="button" value="BACK" onClick={goToMain} />
 
             <div className="container">
                 <h4 className="register-h4">REGISTER</h4>
                 <div className="form-group">
                     <label>Username</label>
-                    <input type="text" name="username" id="name" onChange={u => setUserRegister({ ...userRegister, displayname: u.target.value })} value={(userRegister.displayname)}></input>
+                    <input type="text" name="username" id="name" onChange={u => setUserRegister({ ...userRegister, displayName: u.target.value })} value={(userRegister.displayName)}></input>
                 </div>
 
                 <div className="form-group">
