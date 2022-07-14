@@ -21,12 +21,12 @@ export const Register = () => {
             phoneNumber: ""
         });
     const [error, setError] = useState<string>("");
+
     const register = async () => {
         const res = await HTTP.client().post("/register", userRegister);
     };
+
     const goToMain = () => { navigate("/"); };
-
-
 
     const submitHandler = (e: React.SyntheticEvent) => {
         e.preventDefault();
