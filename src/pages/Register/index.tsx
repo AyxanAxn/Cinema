@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { HTTP } from "../../core/services/http";
 import "./style.css";
 
 export interface IUserDetails {
-    username: string,
+    displayName: string,
     email: string,
     password: string,
     phoneNumber: string
@@ -10,24 +12,41 @@ export interface IUserDetails {
 
 export const Register = () => {
 
+    const navigate = useNavigate();
     const [userRegister, setUserRegister] = React.useState<IUserDetails>(
-        { 
-            email: "", 
+        {
+            email: "",
             password: "",
-            username: "", 
-            phoneNumber: "" 
+            displayName: "",
+            phoneNumber: ""
         });
-
     const [error, setError] = useState<string>("");
+
+    const register = async () => {
+        try {
+            const res = await HTTP.client().post("/register", userRegister);
+        } catch(err) {
+            console.log("Error: ", err);
+        }
+    };
+
+    const goToMain = () => { navigate("/"); };
+
+    const submitHandler = (e: React.SyntheticEvent) => {
+        e.preventDefault();
+
+    };
 
     return (
 
-        <form>
+        <form onSubmit={submitHandler}>
+            <input type="submit" className="button" value="BACK" onClick={goToMain} />
+
             <div className="container">
                 <h4 className="register-h4">REGISTER</h4>
                 <div className="form-group">
                     <label>Username</label>
-                    <input type="text" name="username" id="name" onChange={u => setUserRegister({ ...userRegister, username: u.target.value })} value={(userRegister.username)}></input>
+                    <input type="text" name="username" id="name" onChange={u => setUserRegister({ ...userRegister, displayName: u.target.value })} value={(userRegister.displayName)}></input>
                 </div>
 
                 <div className="form-group">
@@ -45,10 +64,9 @@ export const Register = () => {
                     <input type="password" name="password" id="password" onChange={u => setUserRegister({ ...userRegister, password: u.target.value })} value={(userRegister.password)}></input>
                 </div>
                 {(error != "") ? (<div className='error'>{error}</div>) : ""}
-                <input type="submit" className="button" value="REGISTER" />
+                <input type="submit" className="button" value="REGISTER" onClick={register} />
             </div>
         </form >
-
 
     );
 };
