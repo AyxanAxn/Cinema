@@ -4,7 +4,7 @@ export const HTTP = (() => {
     let $client: AxiosInstance;
 
     return {
-        createClient(url:string): AxiosInstance {
+        createClient(url: string): AxiosInstance {
             if ($client) {
                 return $client;
             }
@@ -18,11 +18,9 @@ export const HTTP = (() => {
         },
         client() {
             const token = localStorage.getItem("token");
-
             if (token) {
                 $client.defaults.headers.common.Authorization = `Bearer ${token}`;
             }
-
             return $client;
         },
     };

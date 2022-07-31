@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import "./style.css";
 
@@ -14,13 +14,13 @@ const adminUser = {
 };
 
 export const Login = () => {
-    
-    const [user, setUser] = useState<IDetails>({name: "", email: "", password: ""});
+
+    const [user, setUser] = useState<IDetails>({ name: "", email: "", password: "" });
     const [error, setError] = useState<string>("");
-    
+
     const login = (details: IDetails) => {
-        if(details.email == adminUser.email  && details.password == adminUser.password)
-        {
+
+        if (details.email == adminUser.email && details.password == adminUser.password) {
             setUser({
                 name: details.name,
                 email: details.email,
@@ -28,15 +28,15 @@ export const Login = () => {
             });
             setError("");
             console.log("success");
-            
+
         }
-        else{
+        else {
             setError("Details do not match");
         }
     };
 
-    const [details, setDetails] = useState<IDetails>({name: "", email: "", password: ""});
-    
+    const [details, setDetails] = useState<IDetails>({ name: "", email: "", password: "" });
+
     const submitHandler = (e: React.SyntheticEvent) => {
         e.preventDefault();
         login(details);
@@ -47,15 +47,15 @@ export const Login = () => {
             <h2>Login</h2>
             <div className='input-container'>
                 <label htmlFor='name'>Name: </label>
-                <input type="text" name="name" id = "name" onChange={e => setDetails({...details, name: e.target.value})} value={details.name} />
-            </div>                
+                <input type="text" name="name" id="name" onChange={e => setDetails({ ...details, name: e.target.value })} value={details.name} />
+            </div>
             <div className='input-container'>
                 <label htmlFor='email'>Email: </label>
-                <input type="email" name="email" id = "email"  onChange={e => setDetails({...details, email: e.target.value})} value={details.email}/>
+                <input type="email" name="email" id="email" onChange={e => setDetails({ ...details, email: e.target.value })} value={details.email} />
             </div>
             <div className='input-container'>
                 <label htmlFor='password'>Password: </label>
-                <input type="password" name="password" id = "password"  onChange={e => setDetails({...details, password: e.target.value})} value={details.password}/>
+                <input type="password" name="password" id="password" onChange={e => setDetails({ ...details, password: e.target.value })} value={details.password} />
             </div>
             {(error != "") ? (<div className='error'>{error}</div>) : ""}
             <input type="submit" className="button" value="LOGIN" />
