@@ -1,19 +1,17 @@
-import React from "react";
-import { AppRoutes } from "./routes";
+import React from 'react'
+import { AppRoutes } from './routes'
+import { Nav } from './components/Navigation'
+import { HTTP } from './core/services/http'
 
-import { HTTP } from "./core/services/http";
-import Nav from './nav';
-
-HTTP.createClient("api");
-
+HTTP.createClient('api')
 
 function App() {
-    return (
-        <div>
-            <Nav />
-            <AppRoutes />
-        </div>
-    );
+  return (
+    <>
+      <Nav />
+      <AppRoutes />
+    </>
+  )
 }
 
-export default App;
+export default App
